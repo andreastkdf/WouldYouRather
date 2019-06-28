@@ -28,7 +28,7 @@ sudo apt-get update && sudo apt-get install yarn
 
 ## Start Would you rather? :
 ```bash
-cd WouldYourRather
+cd WouldYouRather
 yarn install
 yarn start
 ```
