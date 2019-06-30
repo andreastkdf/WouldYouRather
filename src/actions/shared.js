@@ -9,10 +9,10 @@ const AUTHED_USER = "atkdf"
 // Makes an async request
 export function handleInitialData() {
   return dispatch => {
-    return getInitialData().then(({ users, polls }) => {
+    return getInitialData().then(({ users, questions }) => {
       // Adding polls and users to the Redux Store
       dispatch(receiveUsers(users))
-      dispatch(receivePolls(polls))
+      dispatch(receivePolls(questions))
       dispatch(setAuthedUser(AUTHED_USER))
     })
   }
