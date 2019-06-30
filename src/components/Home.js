@@ -17,20 +17,20 @@ class Home extends Component {
   }
 }
 
-function mapStateToProps({ polls }) {
+function mapStateToProps({ polls, authedUser }) {
   return {
     answeredPollIds: Object.keys(polls)
       .filter(
         id =>
-          polls[id].optionOne.votes.length > 0 ||
-          polls[id].optionTwo.votes.length > 0
+          polls[id].optionOne.votes.includes(authedUser) ||
+          polls[id].optionTwo.votes.includes(authedUser)
       )
       .sort((a, b) => polls[b].timestamp - polls[a].timestamp),
     unansweredPollIds: Object.keys(polls)
       .filter(
         id =>
-          polls[id].optionOne.votes.length === 0 &&
-          polls[id].optionTwo.votes.length === 0
+          !polls[id].optionOne.votes.includes(authedUser) &&
+          !polls[id].optionTwo.votes.includes(authedUser)
       )
       .sort((a, b) => polls[b].timestamp - polls[a].timestamp)
   }
