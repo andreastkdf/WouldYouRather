@@ -6,7 +6,6 @@ let users = {
     answers: {
       "8xf0y6ziyjabvozdd253nd": "optionOne",
       "6ni6ok3ym7mf1p33lnez": "optionTwo",
-      am8ehyc8byjqgar0jgpub9: "optionTwo",
       loxhs1bqm25b708cmbf3g: "optionTwo"
     },
     questions: ["8xf0y6ziyjabvozdd253nd", "am8ehyc8byjqgar0jgpub9"]
@@ -84,7 +83,7 @@ let questions = {
       text: "be telekinetic"
     },
     optionTwo: {
-      votes: ["atkdf"],
+      votes: [],
       text: "be telepathic"
     }
   },
@@ -125,6 +124,32 @@ let questions = {
     optionTwo: {
       votes: ["pstewart"],
       text: "write Swift"
+    }
+  },
+  df674vofupe1dqz9em77er: {
+    id: "df674vofupe1dqz9em77er",
+    author: "dashton",
+    timestamp: 1561908195,
+    optionOne: {
+      votes: [],
+      text: "Use Eclipse"
+    },
+    optionTwo: {
+      votes: [],
+      text: "Use VS Code"
+    }
+  },
+  lyrxz4rsoxrweisfue2f9i: {
+    id: "lyrxz4rsoxrweisfue2f9i",
+    author: "elam",
+    timestamp: 1561908505720,
+    optionOne: {
+      votes: [],
+      text: "Buy snacks"
+    },
+    optionTwo: {
+      votes: [],
+      text: "Buy tea"
     }
   }
 }
