@@ -1,14 +1,14 @@
 import React, { Component } from "react"
 import { connect } from "react-redux"
 import MenuAppBar from "./material/MenuAppBar"
-import CenteredTabs from "./material/Tabs"
+import PollTabs from "./material/PollTabs"
 
 class Home extends Component {
   render() {
     return (
       <div>
         <MenuAppBar />
-        <CenteredTabs
+        <PollTabs
           unanswered={this.props.unansweredPollIds}
           answered={this.props.answeredPollIds}
         />

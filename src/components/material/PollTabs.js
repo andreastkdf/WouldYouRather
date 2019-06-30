@@ -21,7 +21,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const CenteredTabs = ({ unanswered, answered }) => {
+const PollTabs = ({ unanswered, answered }) => {
   const classes = useStyles()
   const theme = useTheme()
   const [value, setValue] = React.useState(0)
@@ -78,4 +78,4 @@ const CenteredTabs = ({ unanswered, answered }) => {
   )
 }
 
-export default CenteredTabs
+export default PollTabs
