@@ -5,6 +5,7 @@ import Tabs from "@material-ui/core/Tabs"
 import Tab from "@material-ui/core/Tab"
 import Paper from "@material-ui/core/Paper"
 import Typography from "@material-ui/core/Typography"
+import PollSummary from "./../PollSummary"
 
 const TabContainer = ({ children }) => {
   return (
@@ -39,9 +40,9 @@ const PollTabs = ({ unanswered, answered }) => {
       <Tabs
         value={value}
         onChange={handleChange}
-        indicatorColor="primary"
-        textColor="primary"
         centered
+        indicatorColor="secondary"
+        textColor="secondary"
       >
         <Tab label="Unanswered Questions" />
         <Tab label="Answered Questions" />
@@ -51,28 +52,16 @@ const PollTabs = ({ unanswered, answered }) => {
         index={value}
         onChangeIndex={handleChangeIndex}
       >
-        {value === 0 && (
-          <TabContainer dir={theme.direction}>
-            <ul>
-              {unanswered.map(id => (
-                <li key={id}>
-                  <div>Poll ID: {id}</div>
-                </li>
-              ))}
-            </ul>
-          </TabContainer>
-        )}
-        {value === 1 && (
-          <TabContainer dir={theme.direction}>
-            <ul>
-              {answered.map(id => (
-                <li key={id}>
-                  <div>Poll ID: {id}</div>
-                </li>
-              ))}
-            </ul>
-          </TabContainer>
-        )}
+        <TabContainer dir={theme.direction}>
+          {unanswered.map(id => (
+            <PollSummary key={id} id={id} />
+          ))}
+        </TabContainer>
+        <TabContainer dir={theme.direction}>
+          {answered.map(id => (
+            <PollSummary key={id} id={id} />
+          ))}
+        </TabContainer>
       </SwipeableViews>
     </Paper>
   )
