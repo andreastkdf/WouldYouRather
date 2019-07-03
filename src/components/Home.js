@@ -3,16 +3,21 @@ import { connect } from "react-redux"
 import MenuAppBar from "./material/MenuAppBar"
 import PollTabs from "./material/PollTabs"
 
+// dev
+import Poll from "./Poll"
+
 class Home extends Component {
   render() {
     return (
-      <div>
-        <MenuAppBar />
-        <PollTabs
-          unanswered={this.props.unansweredPollIds}
-          answered={this.props.answeredPollIds}
-        />
-      </div>
+      // <div>
+      //   <MenuAppBar />
+      //   <PollTabs
+      //     unanswered={this.props.unansweredPollIds}
+      //     answered={this.props.answeredPollIds}
+      //   />
+      // </div>
+
+      <Poll id="8xf0y6ziyjabvozdd253nd" />
     )
   }
 }

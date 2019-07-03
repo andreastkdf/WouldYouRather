@@ -1,14 +1,13 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
+import Typography from "@material-ui/core/Typography"
 import Card from "@material-ui/core/Card"
 import CardHeader from "@material-ui/core/CardHeader"
-import CardActions from "@material-ui/core/CardActions"
-import CardContent from "@material-ui/core/CardContent"
-import Button from "@material-ui/core/Button"
-import Typography from "@material-ui/core/Typography"
 import ImageAvatars from "./Avatar"
 import { formatDate } from "../../utils/helpers"
-import OptionResult from "./OptionResult"
+import CardContentResults from "./CardContentResults"
+import CardContentSummary from "./CardContentSummary"
+import CardContentAnswerForm from "./CardContentAnswerForm"
 
 const useStyles = makeStyles({
   card: {
@@ -26,13 +25,30 @@ const useStyles = makeStyles({
   }
 })
 
-const PollCard = ({ poll, authedUser, viewResults }) => {
+const PollCard = ({ poll, authedUser, viewResults, summary }) => {
   const { name, optionOne, optionTwo, timestamp, avatar } = poll
   let optionOneVotes = optionOne.votes.length
   let optionTwoVotes = optionTwo.votes.length
   let totalVotes = optionOneVotes + optionTwoVotes
+  let cardContent = ""
 
   const classes = useStyles()
+
+  if (viewResults && !summary) {
+    cardContent = (
+      <CardContentResults
+        optionOne={optionOne}
+        optionTwo={optionTwo}
+        authedUser={authedUser}
+      />
+    )
+  } else if (summary) {
+    cardContent = (
+      <CardContentSummary optionOne={optionOne} optionTwo={optionTwo} />
+    )
+  } else {
+    cardContent = <CardContentAnswerForm />
+  }
 
   return (
     <Card className={classes.card}>
@@ -41,75 +57,7 @@ const PollCard = ({ poll, authedUser, viewResults }) => {
         title={name}
         subheader={formatDate(timestamp)}
       />
-
-      <CardContent>
-        <Typography
-          className={classes.title}
-          color="textSecondary"
-          gutterBottom
-        >
-          Would You Rather ...
-        </Typography>
-
-        {viewResults ? (
-          <span>
-            <div className={classes.option}>
-              <Typography variant="h5" component="h2">
-                {optionOne.text} ?
-              </Typography>
-              <OptionResult
-                option={optionOne}
-                authedUser={authedUser}
-                totalVotes={totalVotes}
-              />
-              <Typography variant="h6" component="h2" color="textSecondary">
-                or
-              </Typography>
-            </div>
-            <div className={classes.option}>
-              <Typography variant="h5" component="h2">
-                {optionTwo.text} ?
-              </Typography>
-              <OptionResult
-                option={optionTwo}
-                authedUser={authedUser}
-                totalVotes={totalVotes}
-              />
-            </div>
-          </span>
-        ) : (
-          <span>
-            <div className={classes.option}>
-              <Typography variant="h5" component="h2">
-                {optionOne.text} ?
-              </Typography>
-              <Typography variant="h6" component="h2" color="textSecondary">
-                or
-              </Typography>
-            </div>
-            <div className={classes.option}>
-              <Typography variant="h5" component="h2">
-                {optionTwo.text} ?
-              </Typography>
-            </div>
-          </span>
-        )}
-      </CardContent>
-
-      {viewResults ? (
-        ""
-      ) : (
-        <CardActions>
-          <Button
-            size="large"
-            variant="contained"
-            color="secondary"
-            style={{ marginLeft: "auto" }}
-          >
-            View Poll
-          </Button>
-        </CardActions>
-      )}
+      {cardContent}
     </Card>
   )
 }
