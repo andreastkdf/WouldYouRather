@@ -8,11 +8,7 @@ import Typography from "@material-ui/core/Typography"
 import PollSummary from "./../PollSummary"
 
 const TabContainer = ({ children }) => {
-  return (
-    <Typography component="div" style={{ padding: 8 * 3 }}>
-      {children}
-    </Typography>
-  )
+  return <Typography component="div">{children}</Typography>
 }
 
 const useStyles = makeStyles(theme => ({

@@ -57,7 +57,7 @@ let questions = {
       text: "have horrible short term memory"
     },
     optionTwo: {
-      votes: [],
+      votes: ["pstewart", "dashton", "elam"],
       text: "have horrible long term memory"
     }
   },

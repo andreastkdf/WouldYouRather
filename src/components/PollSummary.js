@@ -5,21 +5,22 @@ import PollSummaryCard from "./material/PollSummaryCard"
 
 class PollSummary extends Component {
   render() {
-    const { poll } = this.props
+    const { poll, authedUser } = this.props
 
     if (poll === null) {
       return <p>This poll doesn't exist</p>
     }
 
-    return <PollSummaryCard poll={poll} />
+    return <PollSummaryCard poll={poll} authedUser={authedUser} />
   }
 }
 
-function mapStateToProps({ polls, users }, { id }) {
+function mapStateToProps({ polls, users, authedUser }, { id }) {
   const poll = polls[id]
 
   return {
-    poll: poll ? formatPoll(poll, users[poll.author]) : null
+    poll: poll ? formatPoll(poll, users[poll.author]) : null,
+    authedUser
   }
 }
 
