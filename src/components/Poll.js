@@ -12,7 +12,7 @@ class Poll extends Component {
     }
 
     return (
-      <PollCard poll={poll} authedUser={authedUser} summary={viewResults} />
+      <PollCard poll={poll} authedUser={authedUser} viewResults={viewResults} />
     )
   }
 }

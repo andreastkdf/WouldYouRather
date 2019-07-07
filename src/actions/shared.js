@@ -3,7 +3,7 @@ import { receivePolls } from "./polls"
 import { receiveUsers } from "./users"
 import { setAuthedUser } from "./authedUser"
 
-const AUTHED_USER = "atkdf"
+const AUTHED_USER = "ctomlin"
 
 // Use the redux-thunk pattern
 // Makes an async request

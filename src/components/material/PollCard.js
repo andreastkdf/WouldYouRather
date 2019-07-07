@@ -1,13 +1,12 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
-import Typography from "@material-ui/core/Typography"
 import Card from "@material-ui/core/Card"
 import CardHeader from "@material-ui/core/CardHeader"
 import ImageAvatars from "./Avatar"
 import { formatDate } from "../../utils/helpers"
 import CardContentResults from "./CardContentResults"
 import CardContentSummary from "./CardContentSummary"
-import CardContentAnswerForm from "./CardContentAnswerForm"
+import CardContentAnswerForm from "../CardContentAnswerForm"
 
 const useStyles = makeStyles({
   card: {
@@ -27,9 +26,6 @@ const useStyles = makeStyles({
 
 const PollCard = ({ poll, authedUser, viewResults, summary }) => {
   const { name, optionOne, optionTwo, timestamp, avatar } = poll
-  let optionOneVotes = optionOne.votes.length
-  let optionTwoVotes = optionTwo.votes.length
-  let totalVotes = optionOneVotes + optionTwoVotes
   let cardContent = ""
 
   const classes = useStyles()
@@ -47,7 +43,7 @@ const PollCard = ({ poll, authedUser, viewResults, summary }) => {
       <CardContentSummary optionOne={optionOne} optionTwo={optionTwo} />
     )
   } else {
-    cardContent = <CardContentAnswerForm />
+    cardContent = <CardContentAnswerForm poll={poll} authedUser={authedUser} />
   }
 
   return (
