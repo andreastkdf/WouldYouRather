@@ -1,4 +1,4 @@
-import { RECEIVE_POLLS, ADD_POLL_ANSWER } from "../actions/polls"
+import { RECEIVE_POLLS, ADD_POLL, ADD_POLL_ANSWER } from "../actions/polls"
 
 export default function polls(state = {}, action) {
   switch (action.type) {
@@ -21,10 +21,15 @@ export default function polls(state = {}, action) {
           }
         }
       }
-
       return {
         ...state,
         ...polls
+      }
+    case ADD_POLL:
+      const { poll } = action
+      return {
+        ...state,
+        [action.poll.id]: poll
       }
 
     default:
