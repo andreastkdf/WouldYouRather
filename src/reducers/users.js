@@ -1,5 +1,5 @@
-import { RECEIVE_USERS, ADD_USER_ANSWER } from "../actions/users"
-import { ADD_POLL } from "../actions/polls"
+import { RECEIVE_USERS } from "../actions/users"
+import { ADD_POLL, ADD_POLL_ANSWER } from "../actions/polls"
 
 export default function users(state = {}, action) {
   switch (action.type) {
@@ -8,16 +8,16 @@ export default function users(state = {}, action) {
         ...state,
         ...action.users
       }
-    case ADD_USER_ANSWER:
-      const { user, qid, answer } = action
+    case ADD_POLL_ANSWER:
+      const { authedUser, qid, answer } = action
       let users = {}
 
       users = {
         ...state,
-        [user]: {
-          ...state[user],
+        [authedUser]: {
+          ...state[authedUser],
           answers: {
-            ...state[user].answers,
+            ...state[authedUser].answers,
             [qid]: answer
           }
         }

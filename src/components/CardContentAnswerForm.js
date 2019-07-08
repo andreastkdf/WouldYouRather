@@ -39,9 +39,7 @@ class CardContentAnswerForm extends Component {
     const { vote, id } = this.state
     const { dispatch } = this.props
 
-    dispatch(handlePollAnswer(vote, id)).then(() =>
-      dispatch(handleUserAnswer(id, vote))
-    )
+    dispatch(handlePollAnswer(vote, id))
   }
 
   render() {
