@@ -1,4 +1,5 @@
 import { saveQuestion, saveQuestionAnswer } from "../utils/api"
+import { addUserPoll } from "../actions/users"
 
 export const RECEIVE_POLLS = "RECEIVE_POLLS"
 export const ADD_POLL = "ADD_POLL"
