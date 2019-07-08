@@ -1,4 +1,4 @@
-import { RECEIVE_POLLS } from "../actions/polls"
+import { RECEIVE_POLLS, ADD_POLL_ANSWER } from "../actions/polls"
 
 export default function polls(state = {}, action) {
   switch (action.type) {
@@ -7,6 +7,26 @@ export default function polls(state = {}, action) {
         ...state,
         ...action.polls
       }
+    case ADD_POLL_ANSWER:
+      const { authedUser, answer, qid } = action
+      let polls = {}
+
+      polls = {
+        ...state,
+        [qid]: {
+          ...state[qid],
+          [answer]: {
+            ...state[qid][answer],
+            votes: state[qid][answer].votes.concat([authedUser])
+          }
+        }
+      }
+
+      return {
+        ...state,
+        ...polls
+      }
+
     default:
       return state
   }

@@ -16,7 +16,8 @@ let users = {
     avatarURL: "avatars/pstewart.png",
     answers: {
       vthrdm985a262al8qx3do: "optionOne",
-      xj352vofupe1dqz9emx13r: "optionTwo"
+      xj352vofupe1dqz9emx13r: "optionTwo",
+      "8xf0y6ziyjabvozdd253nd": "optionTwo"
     },
     questions: ["loxhs1bqm25b708cmbf3g", "vthrdm985a262al8qx3do"]
   },
@@ -35,7 +36,7 @@ let users = {
     id: "dashton",
     name: "David A.",
     avatarURL: "/avatars/dashton.png",
-    answers: {},
+    answers: { "8xf0y6ziyjabvozdd253nd": "optionTwo" },
     questions: []
   },
   ctomlin: {
@@ -57,7 +58,7 @@ let questions = {
       text: "have horrible short term memory"
     },
     optionTwo: {
-      votes: ["pstewart", "dashton", "elam"],
+      votes: ["pstewart", "dashton"],
       text: "have horrible long term memory"
     }
   },

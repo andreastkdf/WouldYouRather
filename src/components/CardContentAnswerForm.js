@@ -8,6 +8,9 @@ import FormControlLabel from "@material-ui/core/FormControlLabel"
 import Radio from "@material-ui/core/Radio"
 import RadioGroup from "@material-ui/core/RadioGroup"
 import CardActions from "@material-ui/core/CardActions"
+import { connect } from "react-redux"
+import { handlePollAnswer } from "../actions/polls"
+import { handleUserAnswer } from "../actions/users"
 
 const styles = theme => ({
   title: {
@@ -18,25 +21,27 @@ const styles = theme => ({
 class CardContentAnswerForm extends Component {
   state = {
     vote: "",
-    authedUser: "",
     id: ""
   }
 
   handleChange = e => {
     const vote = e.target.value
-    const { authedUser, poll } = this.props
+    const { poll } = this.props
     const id = poll.id
     this.setState(() => ({
       vote,
-      id,
-      authedUser
+      id
     }))
   }
 
   handleSubmit = e => {
     e.preventDefault()
-    const vote = this.state
-    console.log(vote)
+    const { vote, id } = this.state
+    const { dispatch } = this.props
+
+    dispatch(handlePollAnswer(vote, id)).then(() =>
+      dispatch(handleUserAnswer(id, vote))
+    )
   }
 
   render() {
@@ -87,4 +92,4 @@ class CardContentAnswerForm extends Component {
   }
 }
 
-export default withStyles(styles)(CardContentAnswerForm)
+export default connect()(withStyles(styles)(CardContentAnswerForm))
