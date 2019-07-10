@@ -1,4 +1,5 @@
 import { saveQuestion, saveQuestionAnswer } from "../utils/api"
+import { showLoading, hideLoading } from "react-redux-loading"
 
 export const RECEIVE_POLLS = "RECEIVE_POLLS"
 export const ADD_POLL = "ADD_POLL"
@@ -31,13 +32,17 @@ function addPoll(poll) {
 export function handleAddPoll(optionOneText, optionTwoText) {
   return (dispatch, getState) => {
     const { authedUser } = getState()
+    dispatch(showLoading())
+
     const author = authedUser
 
     return saveQuestion({
       optionOneText,
       optionTwoText,
       author
-    }).then(poll => dispatch(addPoll(poll)))
+    })
+      .then(poll => dispatch(addPoll(poll)))
+      .then(() => dispatch(hideLoading()))
   }
 }
 export function handlePollAnswer(answer, qid) {

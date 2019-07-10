@@ -9,7 +9,6 @@ import User from "./User"
 
 const styles = theme => ({
   paper: {
-    marginTop: theme.spacing(3),
     maxWidth: 600,
     overflowX: "auto",
     marginBottom: theme.spacing(2),

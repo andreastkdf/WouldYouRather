@@ -8,6 +8,7 @@ import CardActions from "@material-ui/core/CardActions"
 import Button from "@material-ui/core/Button"
 import TextField from "@material-ui/core/TextField"
 import Typography from "@material-ui/core/Typography"
+import { Redirect } from "react-router-dom"
 import ImageAvatars from "./material/Avatar"
 import { handleAddPoll } from "../actions/polls"
 
@@ -30,7 +31,8 @@ const styles = theme => ({
 class NewPoll extends Component {
   state = {
     optionOne: "",
-    optionTwo: ""
+    optionTwo: "",
+    toHome: false
   }
 
   handleChange = e => {
@@ -48,10 +50,21 @@ class NewPoll extends Component {
     const { dispatch } = this.props
 
     dispatch(handleAddPoll(optionOne, optionTwo))
+
+    this.setState(() => ({
+      optionOne: "",
+      optionTwo: "",
+      toHome: true
+    }))
   }
 
   render() {
     const { name, avatar, classes } = this.props
+    const { toHome } = this.state
+
+    if (toHome === true) {
+      return <Redirect to="/" />
+    }
     return (
       <Card className={classes.card}>
         <CardHeader

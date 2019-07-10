@@ -4,6 +4,7 @@ import Typography from "@material-ui/core/Typography"
 import CardContent from "@material-ui/core/CardContent"
 import Button from "@material-ui/core/Button"
 import CardActions from "@material-ui/core/CardActions"
+import { Link } from "react-router-dom"
 
 const useStyles = makeStyles({
   title: {
@@ -11,7 +12,7 @@ const useStyles = makeStyles({
   }
 })
 
-const CardContentSummary = ({ optionOne, optionTwo }) => {
+const CardContentSummary = ({ id, optionOne, optionTwo }) => {
   const classes = useStyles()
 
   return (
@@ -39,14 +40,14 @@ const CardContentSummary = ({ optionOne, optionTwo }) => {
         </div>
       </CardContent>
       <CardActions>
-        <Button
-          size="large"
-          variant="contained"
-          color="secondary"
-          style={{ marginLeft: "auto" }}
+        <Link
+          to={`/questions/${id}`}
+          style={{ textDecoration: "none", marginLeft: "auto" }}
         >
-          View Poll
-        </Button>
+          <Button size="large" variant="contained" color="secondary">
+            View Poll
+          </Button>
+        </Link>
       </CardActions>
     </span>
   )

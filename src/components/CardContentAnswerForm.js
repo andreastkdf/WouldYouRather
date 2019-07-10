@@ -10,7 +10,6 @@ import RadioGroup from "@material-ui/core/RadioGroup"
 import CardActions from "@material-ui/core/CardActions"
 import { connect } from "react-redux"
 import { handlePollAnswer } from "../actions/polls"
-import { handleUserAnswer } from "../actions/users"
 
 const styles = theme => ({
   title: {

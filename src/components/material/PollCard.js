@@ -24,7 +24,6 @@ const useStyles = makeStyles({
 const PollCard = ({ poll, authedUser, viewResults, summary }) => {
   const { name, optionOne, optionTwo, timestamp, avatar } = poll
   let cardContent = ""
-
   const classes = useStyles()
 
   if (viewResults && !summary) {
@@ -37,7 +36,11 @@ const PollCard = ({ poll, authedUser, viewResults, summary }) => {
     )
   } else if (summary) {
     cardContent = (
-      <CardContentSummary optionOne={optionOne} optionTwo={optionTwo} />
+      <CardContentSummary
+        optionOne={optionOne}
+        optionTwo={optionTwo}
+        id={poll.id}
+      />
     )
   } else {
     cardContent = <CardContentAnswerForm poll={poll} authedUser={authedUser} />
