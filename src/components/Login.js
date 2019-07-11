@@ -134,6 +134,7 @@ class SignIn extends Component {
                 variant="contained"
                 color="primary"
                 className={classes.submit}
+                disabled={user === ""}
               >
                 Sign In
               </Button>
