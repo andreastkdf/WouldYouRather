@@ -98,7 +98,7 @@ class SignIn extends Component {
         <Container component="main" maxWidth="xs">
           <div className={classes.paper}>
             <Avatar
-              src="/logo.jpg"
+              src="./logo.jpg"
               alt="app logo"
               className={classes.bigAvatar}
             />
