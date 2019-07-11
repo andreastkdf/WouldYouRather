@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/andreastkdf/WouldYouRather/static/css/main.685dea8f.chunk.css",
-    "main.js": "/andreastkdf/WouldYouRather/static/js/main.cb147887.chunk.js",
-    "main.js.map": "/andreastkdf/WouldYouRather/static/js/main.cb147887.chunk.js.map",
-    "runtime~main.js": "/andreastkdf/WouldYouRather/static/js/runtime~main.05102803.js",
-    "runtime~main.js.map": "/andreastkdf/WouldYouRather/static/js/runtime~main.05102803.js.map",
-    "static/css/2.d27db2c5.chunk.css": "/andreastkdf/WouldYouRather/static/css/2.d27db2c5.chunk.css",
-    "static/js/2.c0fbcdda.chunk.js": "/andreastkdf/WouldYouRather/static/js/2.c0fbcdda.chunk.js",
-    "static/js/2.c0fbcdda.chunk.js.map": "/andreastkdf/WouldYouRather/static/js/2.c0fbcdda.chunk.js.map",
-    "index.html": "/andreastkdf/WouldYouRather/index.html",
-    "precache-manifest.f22c99d6bd86dd28fc3abacda543a9c3.js": "/andreastkdf/WouldYouRather/precache-manifest.f22c99d6bd86dd28fc3abacda543a9c3.js",
-    "service-worker.js": "/andreastkdf/WouldYouRather/service-worker.js",
-    "static/css/2.d27db2c5.chunk.css.map": "/andreastkdf/WouldYouRather/static/css/2.d27db2c5.chunk.css.map",
-    "static/css/main.685dea8f.chunk.css.map": "/andreastkdf/WouldYouRather/static/css/main.685dea8f.chunk.css.map",
-    "static/media/index.css": "/andreastkdf/WouldYouRather/static/media/roboto-latin-900italic.bc833e72.woff"
+    "main.css": "/WouldYouRather/static/css/main.685dea8f.chunk.css",
+    "main.js": "/WouldYouRather/static/js/main.cb147887.chunk.js",
+    "main.js.map": "/WouldYouRather/static/js/main.cb147887.chunk.js.map",
+    "runtime~main.js": "/WouldYouRather/static/js/runtime~main.b9a57939.js",
+    "runtime~main.js.map": "/WouldYouRather/static/js/runtime~main.b9a57939.js.map",
+    "static/css/2.4600ea1a.chunk.css": "/WouldYouRather/static/css/2.4600ea1a.chunk.css",
+    "static/js/2.c0fbcdda.chunk.js": "/WouldYouRather/static/js/2.c0fbcdda.chunk.js",
+    "static/js/2.c0fbcdda.chunk.js.map": "/WouldYouRather/static/js/2.c0fbcdda.chunk.js.map",
+    "index.html": "/WouldYouRather/index.html",
+    "precache-manifest.83f87663bd2cc8977a256e38b4368129.js": "/WouldYouRather/precache-manifest.83f87663bd2cc8977a256e38b4368129.js",
+    "service-worker.js": "/WouldYouRather/service-worker.js",
+    "static/css/2.4600ea1a.chunk.css.map": "/WouldYouRather/static/css/2.4600ea1a.chunk.css.map",
+    "static/css/main.685dea8f.chunk.css.map": "/WouldYouRather/static/css/main.685dea8f.chunk.css.map",
+    "static/media/index.css": "/WouldYouRather/static/media/roboto-latin-900italic.bc833e72.woff"
   }
 }
