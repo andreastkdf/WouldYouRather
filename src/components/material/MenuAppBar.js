@@ -12,6 +12,7 @@ import Button from "@material-ui/core/Button"
 import IconButton from "@material-ui/core/IconButton"
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft"
 import MenuIcon from "@material-ui/icons/Menu"
+import Avatar from "@material-ui/core/Avatar"
 import { NavLink } from "react-router-dom"
 
 const useStyles = makeStyles(theme => ({
@@ -27,12 +28,14 @@ const useStyles = makeStyles(theme => ({
   nav: {
     textDecoration: "none",
     color: "secondary"
+  },
+  smallAvatar: {
+    margin: 10
   }
 }))
 
-const MenuBarApp = props => {
+const MenuBarApp = ({ container, avatar, username }) => {
   const classes = useStyles()
-  const { container } = props
   const [mobileOpen, setMobileOpen] = React.useState(false)
 
   const handleDrawerToggle = () => {
@@ -78,7 +81,19 @@ const MenuBarApp = props => {
           <Typography align="center" variant="h6" className={classes.title}>
             Would You Rather?
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Typography
+            align="right"
+            variant="subtitle2"
+            className={classes.title}
+          >
+            Hello, {username}
+          </Typography>
+          <Avatar
+            src={avatar}
+            className={classes.smallAvatar}
+            alt={`Avatar of ${username}`}
+          />
+          <Button color="inherit">Logout</Button>
         </Toolbar>
       </AppBar>
       <div style={{ height: 70 }} />
