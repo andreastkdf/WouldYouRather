@@ -1,5 +1,10 @@
 import React, { Component, Fragment } from "react"
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  HashRouter
+} from "react-router-dom"
 import { connect } from "react-redux"
 import LoadingBar from "react-redux-loading"
 import { handleInitialData } from "../actions/shared"
@@ -18,27 +23,30 @@ class App extends Component {
   render() {
     const { authedUser, avatar, loading } = this.props
     return (
-      <Router>
-        <Fragment>
-          <LoadingBar />
-          <div className="container">
-            {authedUser && loading !== true ? (
-              <div>
-                <MenuAppBar username={authedUser} avatar={avatar} />
-                <Switch>
-                  <Route path="/" exact component={Home} />
-                  <Route path="/questions/:id" component={Poll} />
-                  <Route path="/add" component={NewPoll} />
-                  <Route path="/leaderboard" component={Leaderboard} />
-                  <Route component={NotFound} />
-                </Switch>
-              </div>
-            ) : (
-              <Login />
-            )}
-          </div>
-        </Fragment>
-      </Router>
+      <HashRouter basename="/">
+        <Router>
+          <Fragment>
+            <LoadingBar />
+            <div className="container">
+              {authedUser && loading === true ? (
+                <div>
+                  <MenuAppBar username={authedUser} avatar={avatar} />
+                  <LoadingBar />
+                  <Switch>
+                    <Route path="/" exact component={Home} />
+                    <Route path="/questions/:id" component={Poll} />
+                    <Route path="/add" component={NewPoll} />
+                    <Route path="/leaderboard" component={Leaderboard} />
+                    <Route component={NotFound} />
+                  </Switch>
+                </div>
+              ) : (
+                <Login />
+              )}
+            </div>
+          </Fragment>
+        </Router>
+      </HashRouter>
     )
   }
 }
@@ -46,7 +54,7 @@ class App extends Component {
 function mapStateToProps({ authedUser, users, loadingBar }) {
   return {
     authedUser: authedUser,
-    loading: loadingBar.default === 1,
+    loading: (authedUser && users && loadingBar) !== null,
     avatar: (authedUser && users) !== null ? users[authedUser].avatarURL : null
   }
 }

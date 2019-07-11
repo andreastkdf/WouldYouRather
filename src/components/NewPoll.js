@@ -51,20 +51,24 @@ class NewPoll extends Component {
 
     dispatch(handleAddPoll(optionOne, optionTwo))
 
+    console.log("faaa")
     this.setState(() => ({
       optionOne: "",
       optionTwo: "",
       toHome: true
     }))
+    console.log("faaa end")
   }
 
   render() {
     const { name, avatar, classes } = this.props
     const { toHome } = this.state
 
+    console.log(toHome)
     if (toHome === true) {
       return <Redirect to="/" />
     }
+
     return (
       <Card className={classes.card}>
         <CardHeader

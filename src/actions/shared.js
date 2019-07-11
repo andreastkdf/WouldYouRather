@@ -12,7 +12,6 @@ export function handleInitialData() {
       // Adding polls and users to the Redux Store
       dispatch(receiveUsers(users))
       dispatch(receivePolls(questions))
-      // dispatch(setAuthedUser(AUTHED_USER))
       dispatch(hideLoading())
     })
   }
