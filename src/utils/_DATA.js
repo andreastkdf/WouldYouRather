@@ -2,7 +2,7 @@ let users = {
   atkdf: {
     id: "atkdf",
     name: "Andrea Kostakis",
-    avatarURL: "/avatars/atkdf.png",
+    avatarURL: "./avatars/atkdf.png",
     answers: {
       "8xf0y6ziyjabvozdd253nd": "optionOne",
       "6ni6ok3ym7mf1p33lnez": "optionTwo",
@@ -13,7 +13,7 @@ let users = {
   pstewart: {
     id: "pstewart",
     name: "Phil S.",
-    avatarURL: "/avatars/pstewart.png",
+    avatarURL: "./avatars/pstewart.png",
     answers: {
       vthrdm985a262al8qx3do: "optionOne",
       xj352vofupe1dqz9emx13r: "optionTwo",
@@ -24,7 +24,7 @@ let users = {
   elam: {
     id: "elam",
     name: "Ephie L.",
-    avatarURL: "/avatars/elam.png",
+    avatarURL: "./avatars/elam.png",
     answers: {
       xj352vofupe1dqz9emx13r: "optionOne",
       vthrdm985a262al8qx3do: "optionTwo",
@@ -35,14 +35,14 @@ let users = {
   dashton: {
     id: "dashton",
     name: "David A.",
-    avatarURL: "/avatars/dashton.png",
+    avatarURL: "./avatars/dashton.png",
     answers: { "8xf0y6ziyjabvozdd253nd": "optionTwo" },
     questions: []
   },
   ctomlin: {
     id: "ctomlin",
     name: "Charles T.",
-    avatarURL: "/avatars/ctomlin.png",
+    avatarURL: "./avatars/ctomlin.png",
     answers: {},
     questions: []
   }
