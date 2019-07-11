@@ -23,30 +23,28 @@ class App extends Component {
   render() {
     const { authedUser, avatar, loading } = this.props
     return (
-      <HashRouter basename="/">
-        <Router>
-          <Fragment>
-            <LoadingBar />
-            <div className="container">
-              {authedUser && loading === true ? (
-                <div>
-                  <MenuAppBar username={authedUser} avatar={avatar} />
-                  <LoadingBar />
-                  <Switch>
-                    <Route path="/" exact component={Home} />
-                    <Route path="/questions/:id" component={Poll} />
-                    <Route path="/add" component={NewPoll} />
-                    <Route path="/leaderboard" component={Leaderboard} />
-                    <Route component={NotFound} />
-                  </Switch>
-                </div>
-              ) : (
-                <Login />
-              )}
-            </div>
-          </Fragment>
-        </Router>
-      </HashRouter>
+      <Router>
+        <Fragment>
+          <LoadingBar />
+          <div className="container">
+            {authedUser && loading === true ? (
+              <div>
+                <MenuAppBar username={authedUser} avatar={avatar} />
+                <LoadingBar />
+                <Switch>
+                  <Route path="/" exact component={Home} />
+                  <Route path="/questions/:id" component={Poll} />
+                  <Route path="/add" component={NewPoll} />
+                  <Route path="/leaderboard" component={Leaderboard} />
+                  <Route component={NotFound} />
+                </Switch>
+              </div>
+            ) : (
+              <Login />
+            )}
+          </div>
+        </Fragment>
+      </Router>
     )
   }
 }
