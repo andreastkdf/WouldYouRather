@@ -9,21 +9,22 @@ import NewPoll from "./NewPoll"
 import Poll from "./Poll"
 import Leaderboard from "./Leaderboard"
 import NotFound from "./NotFound"
+import Login from "./Login"
 
 class App extends Component {
   componentDidMount() {
     this.props.dispatch(handleInitialData())
   }
   render() {
-    const { authedUser, avatar } = this.props
+    const { authedUser, avatar, loading } = this.props
     return (
       <Router>
         <Fragment>
+          <LoadingBar />
           <div className="container">
-            <MenuAppBar username={authedUser} avatar={avatar} />
-            <LoadingBar />
-            {this.props.loading === true ? null : (
+            {authedUser && loading !== true ? (
               <div>
+                <MenuAppBar username={authedUser} avatar={avatar} />
                 <Switch>
                   <Route path="/" exact component={Home} />
                   <Route path="/questions/:id" component={Poll} />
@@ -32,6 +33,8 @@ class App extends Component {
                   <Route component={NotFound} />
                 </Switch>
               </div>
+            ) : (
+              <Login />
             )}
           </div>
         </Fragment>
@@ -40,10 +43,10 @@ class App extends Component {
   }
 }
 
-function mapStateToProps({ authedUser, users }) {
+function mapStateToProps({ authedUser, users, loadingBar }) {
   return {
-    loading: authedUser === null,
     authedUser: authedUser,
+    loading: loadingBar.default === 1,
     avatar: (authedUser && users) !== null ? users[authedUser].avatarURL : null
   }
 }

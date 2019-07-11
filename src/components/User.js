@@ -2,7 +2,6 @@ import React, { Component } from "react"
 import { connect } from "react-redux"
 import TableRow from "@material-ui/core/TableRow"
 import TableCell from "@material-ui/core/TableCell"
-
 import ImageAvatars from "./material/Avatar"
 
 class User extends Component {

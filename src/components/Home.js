@@ -11,12 +11,6 @@ class Home extends Component {
           answered={this.props.answeredPollIds}
         />
       </div>
-
-      // <Poll id="8xf0y6ziyjabvozdd253nd" />
-
-      // <NewPoll />
-
-      // <Leaderboard />
     )
   }
 }

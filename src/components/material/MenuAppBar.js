@@ -1,4 +1,6 @@
 import React from "react"
+import { connect } from "react-redux"
+import { NavLink } from "react-router-dom"
 import { makeStyles } from "@material-ui/core/styles"
 import AppBar from "@material-ui/core/AppBar"
 import Toolbar from "@material-ui/core/Toolbar"
@@ -13,7 +15,7 @@ import IconButton from "@material-ui/core/IconButton"
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft"
 import MenuIcon from "@material-ui/icons/Menu"
 import Avatar from "@material-ui/core/Avatar"
-import { NavLink } from "react-router-dom"
+import { setAuthedUser } from "../../actions/authedUser"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -27,19 +29,23 @@ const useStyles = makeStyles(theme => ({
   },
   nav: {
     textDecoration: "none",
-    color: "secondary"
+    color: "inherit"
   },
   smallAvatar: {
     margin: 10
   }
 }))
 
-const MenuBarApp = ({ container, avatar, username }) => {
+const MenuBarApp = ({ container, avatar, username, dispatch }) => {
   const classes = useStyles()
   const [mobileOpen, setMobileOpen] = React.useState(false)
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen)
+  }
+
+  const handleLogout = e => {
+    dispatch(setAuthedUser(null))
   }
 
   const drawer = (
@@ -93,12 +99,14 @@ const MenuBarApp = ({ container, avatar, username }) => {
             className={classes.smallAvatar}
             alt={`Avatar of ${username}`}
           />
-          <Button color="inherit">Logout</Button>
+          <NavLink className={classes.nav} exact to="/" onClick={handleLogout}>
+            <Button color="inherit">Logout</Button>
+          </NavLink>
         </Toolbar>
       </AppBar>
       <div style={{ height: 70 }} />
 
-      <nav className={classes.drawer} aria-label="Mailbox folders">
+      <nav className={classes.drawer} aria-label="Pages">
         <Hidden smUp>
           <Drawer
             container={container}
@@ -137,4 +145,4 @@ const MenuBarApp = ({ container, avatar, username }) => {
   )
 }
 
-export default MenuBarApp
+export default connect()(MenuBarApp)
