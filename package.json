@@ -1,7 +1,7 @@
 {
   "name": "would-you-rather-app",
   "version": "0.1.0",
-  "homepage": "https://andreastkdf.github.io/WouldYouRather",
+  "homepage": "https://andreastkdf.github.io/WouldYouRather/",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.1.3",
