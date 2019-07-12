@@ -40,5 +40,5 @@ The focus of this project is on writing functional React and Redux code, not on 
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app)
 
-## Licence
+## License
 MIT
