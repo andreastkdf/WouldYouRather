@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b328515ef9e02b4f358da156d9754a03",
+    "revision": "735c5b024fcfb9ae1474aac6d225c8e6",
     "url": "/WouldYouRather/index.html"
   },
   {
-    "revision": "0db4fac9fe14a9e760c9",
+    "revision": "e1e806ad2155169f6775",
     "url": "/WouldYouRather/static/css/2.4600ea1a.chunk.css"
   },
   {
-    "revision": "e9465e2a48285da5d6b0",
-    "url": "/WouldYouRather/static/css/main.685dea8f.chunk.css"
+    "revision": "95c526caf7a382b41184",
+    "url": "/WouldYouRather/static/css/main.b689435b.chunk.css"
   },
   {
-    "revision": "0db4fac9fe14a9e760c9",
-    "url": "/WouldYouRather/static/js/2.ddc044b0.chunk.js"
+    "revision": "e1e806ad2155169f6775",
+    "url": "/WouldYouRather/static/js/2.bcd31ad3.chunk.js"
   },
   {
-    "revision": "e9465e2a48285da5d6b0",
-    "url": "/WouldYouRather/static/js/main.1ebd97db.chunk.js"
+    "revision": "95c526caf7a382b41184",
+    "url": "/WouldYouRather/static/js/main.38798da2.chunk.js"
   },
   {
     "revision": "2c23290c4c79eda2b7fb",
