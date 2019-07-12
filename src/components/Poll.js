@@ -2,13 +2,18 @@ import React, { Component } from "react"
 import { connect } from "react-redux"
 import PollCard from "./material/PollCard"
 import { formatPoll } from "../utils/helpers"
+import NotFound from "./NotFound"
 
 class Poll extends Component {
   render() {
     const { poll, viewResults, authedUser } = this.props
 
     if (poll === null) {
-      return <p>This poll doesn't exist</p>
+      return (
+        <div>
+          <NotFound message=": This Poll doesn't exist" />
+        </div>
+      )
     }
 
     return (
