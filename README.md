@@ -1,4 +1,8 @@
 # Would You Rather? Project
+
+![copyright](https://img.shields.io/badge/%C2%A9%202019-Andrea%20Kostakis-blue.svg)
+![license](https://img.shields.io/badge/license-MIT-brightgreen.svg)
+
 ### Second project to submit for Udacity React Nanodegree Program.
 
 A web app that lets a user play the “Would You Rather?” game.
