@@ -12,6 +12,7 @@ A user is asked a question in the form: “Would you rather [option A] or [optio
 Answering "neither" or "both" is against the rules.
 
 In the app, users are able to answer questions, see which questions they haven’t answered, see how other people have voted, post questions, and see the ranking of users on the leaderboard.
+A login feature is available, the users are able to login by selecting one of the available accounts.
 
 # Usage
 ### Install [yarn](https://yarnpkg.com):  
@@ -38,6 +39,8 @@ yarn start
 ```
 
 ## Considerations
+All the features of the game are implemented on the front end with React and Redux. The app is not communicating with an API, therefore the changes are not persistent on refresh, they appear during the user session only.
+
 The focus of this project is on writing functional React and Redux code, not on making the page beautiful. The goal for this project is correct functionality.
 
 ## Create React App
